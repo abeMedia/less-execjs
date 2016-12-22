@@ -1,14 +1,14 @@
-## less-rb
+## less-execjs
 
-less-rb allows you to compile [Less CSS files](http://lesscss.org/) from Ruby.
+less-execjs allows you to compile [Less CSS files](http://lesscss.org/) from Ruby.
 
 To install:
 
-    gem install less-rb
+    gem install less-execjs
 
 To use:
 
-    require 'less-rb'
+    require 'less-execjs'
     Less::Parser.compile("body { background: darken(#CCC, 10%) }")
 
 These bindings also integrate with [Tilt](https://github.com/rtomayko/tilt) and [Sprockets](https://github.com/sstephenson/sprockets), so work seamlessly with Rails.
@@ -27,7 +27,7 @@ For more information, visit <http://lesscss.org>.
 
 ## Usage
 
-less-rb exposes the `less.render` constructor to ruby code via `Less::Parser`. You can instate it
+less-execjs exposes the `less.render` constructor to ruby code via `Less::Parser`. You can instate it
 context free:
 
     parser = Less::Parser.new
