@@ -1,0 +1,8 @@
+Style/AlignHash:
+  SupportedLastArgumentHashStyles: always_ignore
+
+Style/FileName:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false

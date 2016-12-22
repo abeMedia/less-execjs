@@ -4,9 +4,9 @@ module Less
     class << self
       def backend
         @backend ||= ExecJS::ExternalRuntime.new(
-          :name        => 'Node.js (V8)',
-          :command     => ["nodejs", "node"],
-          :runner_path => File.expand_path("../runner.js", __FILE__)
+          name:        'Node.js (V8)',
+          command:     %w(nodejs node),
+          runner_path: File.expand_path('../runner.js', __FILE__)
         )
       end
     end
@@ -41,12 +41,13 @@ module Less
     end
 
     protected
-      def compiler_source
-        File.read(File.expand_path("../compiler.js", __FILE__))
-      end
+
+    def compiler_source
+      File.read(File.expand_path('../compiler.js', __FILE__))
+    end
   end
 
-  class Result
+  class Result # :nodoc:
     attr_reader :css, :imports
 
     def initialize(result = {})

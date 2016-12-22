@@ -1,0 +1,19 @@
+language: ruby
+rvm:
+  - 2.3.3
+
+before_install: gem install bundler # update bundler.
+script: "script/cibuild"
+
+notifications:
+  email: false
+
+deploy:
+  gem: less-execjs
+  provider: rubygems
+  api_key: $RUBYGEMS_KEY
+  on:
+    tags: true
+
+cache: bundler
+sudo: false

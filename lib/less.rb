@@ -3,9 +3,13 @@ require 'less/errors'
 require 'less/parser'
 require 'less/version'
 require 'less/defaults'
+require 'less/loader'
 
-module Less
+module Less # :nodoc:
   extend Less::Defaults
+
+  # only here for jekyll-assets compatibility
+  @loader = Less::Loader.new
 
   def self.compile(css, options = {})
     Parser.new(options).parse(css).to_css
